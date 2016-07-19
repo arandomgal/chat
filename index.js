@@ -11,12 +11,12 @@ io.on('connection', function(socket){
     io.emit('chat message', '[' + socket.client.id + ']: ' + msg);
   });
   socket.on('disconnect', function() {
-    io.emit('chat message', '---' + socket.client.id + ' just left the room!!!');
+    io.emit('chat message', '---' + socket.client.id + ' just left the room---');
   });
 });
 
 io.on('connect', function(socket){
-  io.emit('chat message', '---' + socket.client.id + ' just joined the room!!!');
+  io.emit('chat message', '---' + socket.client.id + ' just joined the room---');
 });
 
 http.listen(process.env.PORT || '3333', function(){
